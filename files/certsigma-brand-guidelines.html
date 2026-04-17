@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CertSigma — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #0d1117; --ink-soft: #3a3f4a; --ink-muted: #7a8090;
+    --bg: #f8f7f4; --card: #ffffff;
+    --accent: #1a3a5c; --accent-bright: #0a6eff; --accent-glow: #c8e0ff;
+    --gold: #c5973a; --gold-light: #f5e8c8;
+    --green: #0d7c4e; --green-light: #d1f0e3;
+    --border: rgba(10,20,40,0.10); --border-strong: rgba(10,20,40,0.18);
+    --font-display: 'Outfit', sans-serif; --font-body: 'DM Sans', sans-serif;
+  }
+  body { font-family: var(--font-body); background: var(--bg); color: var(--ink); line-height: 1.65; font-size: 15px; -webkit-font-smoothing: antialiased; padding: 3rem 4%; }
+  h1,h2,h3,h4 { font-family: var(--font-display); }
+
+  .page-title { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; color: var(--ink); margin-bottom: 0.5rem; }
+  .page-subtitle { color: var(--ink-muted); margin-bottom: 3.5rem; font-weight: 300; }
+
+  .section { margin-bottom: 4rem; }
+  .section-head { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-bright); margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+  .section-title { font-size: 1.3rem; font-weight: 700; color: var(--ink); margin-bottom: 1rem; letter-spacing: -0.02em; }
+
+  /* LOGO SHOWCASES */
+  .logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+
+  .logo-box {
+    border-radius: 16px; padding: 2.5rem 2rem;
+    display: flex; flex-direction: column; align-items: center; gap: 1.2rem;
+    border: 1px solid var(--border);
+  }
+  .logo-box.white { background: #fff; }
+  .logo-box.dark { background: var(--ink); }
+  .logo-box.accent { background: var(--accent); }
+  .logo-box.muted { background: var(--bg); }
+
+  .logo-box-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); }
+  .logo-box.dark .logo-box-label, .logo-box.accent .logo-box-label { color: rgba(255,255,255,0.4); }
+
+  /* LOGO MARK */
+  .logomark {
+    display: flex; align-items: center; gap: 10px; text-decoration: none;
+  }
+  .logomark .sigma-badge {
+    display: flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border-radius: 10px;
+    font-family: var(--font-display); font-size: 1.3rem; font-weight: 800;
+  }
+  .logomark .wordmark {
+    font-family: var(--font-display); font-size: 1.45rem; font-weight: 800; letter-spacing: -0.04em;
+  }
+
+  .logo-primary .sigma-badge { background: var(--accent); color: #fff; }
+  .logo-primary .wordmark { color: var(--ink); }
+
+  .logo-white .sigma-badge { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+  .logo-white .wordmark { color: #fff; }
+
+  .logo-knockout .sigma-badge { background: var(--accent-bright); color: #fff; }
+  .logo-knockout .wordmark { color: #fff; }
+
+  /* SIGMA ICON ONLY */
+  .icon-only {
+    display: flex; align-items: center; justify-content: center;
+    width: 54px; height: 54px; border-radius: 13px;
+    font-family: var(--font-display); font-size: 1.6rem; font-weight: 800;
+  }
+  .icon-dark { background: var(--accent); color: #fff; }
+  .icon-white { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+  .icon-outline { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+
+  /* COLORS */
+  .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+
+  .color-swatch { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+  .swatch-block { height: 80px; }
+  .swatch-info { background: #fff; padding: 0.8rem 1rem; }
+  .swatch-name { font-weight: 600; font-size: 0.85rem; color: var(--ink); }
+  .swatch-hex { font-size: 0.75rem; color: var(--ink-muted); font-family: monospace; margin-top: 2px; }
+  .swatch-role { font-size: 0.7rem; color: var(--ink-muted); margin-top: 3px; }
+
+  /* TYPOGRAPHY */
+  .type-sample { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1.8rem 2rem; margin-bottom: 1rem; }
+  .type-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.8rem; }
+  .t-display { font-family: var(--font-display); font-size: 2.8rem; font-weight: 800; letter-spacing: -0.04em; color: var(--ink); line-height: 1.05; }
+  .t-heading { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; letter-spacing: -0.03em; color: var(--ink); }
+  .t-subhead { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--ink); }
+  .t-body { font-size: 1rem; font-weight: 400; color: var(--ink-soft); line-height: 1.7; }
+  .t-small { font-size: 0.82rem; font-weight: 500; color: var(--ink-muted); letter-spacing: 0.01em; }
+  .t-label-text { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-bright); }
+
+  /* USAGE NOTES */
+  .note-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .note-box { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.6rem; }
+  .note-box h4 { font-size: 0.88rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+  .note-box p { font-size: 0.82rem; color: var(--ink-muted); line-height: 1.6; }
+  .note-box.do { border-left: 3px solid var(--green); }
+  .note-box.dont { border-left: 3px solid #e24b4a; }
+  .badge-do { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--green-light); color: var(--green); padding: 2px 8px; border-radius: 4px; margin-bottom: 0.5rem; }
+  .badge-dont { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: #ffe8e8; color: #a32d2d; padding: 2px 8px; border-radius: 4px; margin-bottom: 0.5rem; }
+
+  /* BRAND VOICE */
+  .voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .voice-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+  .voice-card .trait { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 0.4rem; }
+  .voice-card p { font-size: 0.82rem; color: var(--ink-muted); line-height: 1.6; }
+
+  /* TAGLINES */
+  .tagline-list { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 2rem; }
+  .tagline-item { padding: 0.9rem 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; color: var(--ink); display: flex; justify-content: space-between; align-items: center; }
+  .tagline-item:last-child { border-bottom: none; }
+  .tagline-role { font-size: 0.72rem; color: var(--ink-muted); background: var(--bg); padding: 3px 9px; border-radius: 4px; white-space: nowrap; }
+
+  @media (max-width: 600px) {
+    .note-grid { grid-template-columns: 1fr; }
+    .logo-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<h1 class="page-title">Σ CertSigma — Brand Guidelines</h1>
+<p class="page-subtitle">Version 1.0 · April 2026 · Bengaluru, India</p>
+
+<!-- RATIONALE -->
+<div class="section">
+  <div class="section-head">Brand Rationale</div>
+  <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:2rem 2.5rem;max-width:760px;">
+    <h2 class="section-title">Why "CertSigma"?</h2>
+    <p style="color:var(--ink-soft);line-height:1.8;margin-bottom:1rem;">
+      <strong>Sigma (Σ)</strong> is mathematics' symbol for the sum of all parts — precision, completeness, and rigour. In engineering, Six Sigma is the gold standard for zero-defect quality. We chose it because security certifications must be exhaustive, not approximate.
+    </p>
+    <p style="color:var(--ink-soft);line-height:1.8;margin-bottom:1rem;">
+      <strong>Cert</strong> signals our core service — certification audits. But it also evokes "certainty." Clients come to us because they want to be <em>certain</em> their security posture is real, not performative.
+    </p>
+    <p style="color:var(--ink-soft);line-height:1.8;">
+      Together, CertSigma communicates: <em>the complete sum of security certainty</em> — a firm that delivers precision-grade outcomes, every time.
+    </p>
+  </div>
+</div>
+
+<!-- LOGOS -->
+<div class="section">
+  <div class="section-head">Logo System</div>
+  <h2 class="section-title">Horizontal Lockup</h2>
+  <div class="logo-grid" style="margin-bottom:2rem;">
+    <div class="logo-box white">
+      <a class="logomark logo-primary">
+        <span class="sigma-badge">Σ</span>
+        <span class="wordmark">CertSigma</span>
+      </a>
+      <span class="logo-box-label">Primary · on white</span>
+    </div>
+    <div class="logo-box dark">
+      <a class="logomark logo-white">
+        <span class="sigma-badge">Σ</span>
+        <span class="wordmark">CertSigma</span>
+      </a>
+      <span class="logo-box-label">Reverse · on dark</span>
+    </div>
+    <div class="logo-box accent">
+      <a class="logomark logo-white">
+        <span class="sigma-badge">Σ</span>
+        <span class="wordmark">CertSigma</span>
+      </a>
+      <span class="logo-box-label">Reverse · on brand</span>
+    </div>
+    <div class="logo-box muted">
+      <a class="logomark logo-primary">
+        <span class="sigma-badge">Σ</span>
+        <span class="wordmark">CertSigma</span>
+      </a>
+      <span class="logo-box-label">Primary · on light</span>
+    </div>
+  </div>
+
+  <h2 class="section-title">Icon Mark (standalone)</h2>
+  <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0.8rem;">
+      <span class="icon-only icon-dark">Σ</span>
+      <span style="font-size:0.7rem;color:var(--ink-muted);">Dark bg</span>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;align-items:center;gap:0.8rem;">
+      <span class="icon-only icon-outline">Σ</span>
+      <span style="font-size:0.7rem;color:var(--ink-muted);">Outline</span>
+    </div>
+    <div style="background:var(--ink);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;align-items:center;gap:0.8rem;">
+      <span class="icon-only icon-white">Σ</span>
+      <span style="font-size:0.7rem;color:rgba(255,255,255,0.4);">On dark</span>
+    </div>
+  </div>
+</div>
+
+<!-- COLORS -->
+<div class="section">
+  <div class="section-head">Color System</div>
+  <h2 class="section-title">Primary Palette</h2>
+  <div class="color-grid">
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#1a3a5c;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Navy Anchor</div>
+        <div class="swatch-hex">#1A3A5C</div>
+        <div class="swatch-role">Primary brand colour</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#0a6eff;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Sigma Blue</div>
+        <div class="swatch-hex">#0A6EFF</div>
+        <div class="swatch-role">Accent / CTA / links</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#0d1117;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Deep Ink</div>
+        <div class="swatch-hex">#0D1117</div>
+        <div class="swatch-role">Primary text / dark bg</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#f8f7f4;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Warm Parchment</div>
+        <div class="swatch-hex">#F8F7F4</div>
+        <div class="swatch-role">Page background</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title" style="margin-top:2rem;">Supporting Palette</h2>
+  <div class="color-grid">
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#0d7c4e;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Certified Green</div>
+        <div class="swatch-hex">#0D7C4E</div>
+        <div class="swatch-role">Success / approved</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#c5973a;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Audit Gold</div>
+        <div class="swatch-hex">#C5973A</div>
+        <div class="swatch-role">Premium / badge</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#c8e0ff;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Glow Tint</div>
+        <div class="swatch-hex">#C8E0FF</div>
+        <div class="swatch-role">Highlight / bg-info</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#7a8090;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Slate Mute</div>
+        <div class="swatch-hex">#7A8090</div>
+        <div class="swatch-role">Secondary text</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.4rem 1.8rem;margin-top:1.5rem;max-width:680px;">
+    <h4 style="font-size:0.85rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Why these colours?</h4>
+    <p style="font-size:0.82rem;color:var(--ink-muted);line-height:1.7;">
+      <strong>Navy Anchor</strong> evokes institutional trust — the deep, considered authority of a CPA firm. <strong>Sigma Blue</strong> is modern, digital, and directional — it pulls the eye to actions. <strong>Audit Gold</strong> signals premium quality and certification achievement. <strong>Warm Parchment</strong> softens the palette, preventing the clinical coldness common in security brands. Together they say: <em>rigorous but approachable, expert but not intimidating</em>.
+    </p>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="section">
+  <div class="section-head">Typography</div>
+
+  <div class="type-sample">
+    <div class="type-label">Display — Syne 800 · Headings, hero text</div>
+    <div class="t-display">Security audits<br>that earn trust.</div>
+  </div>
+
+  <div class="type-sample">
+    <div class="type-label">Heading — Syne 700 · Section titles</div>
+    <div class="t-heading">End-to-end compliance, simplified</div>
+  </div>
+
+  <div class="type-sample">
+    <div class="type-label">Subheading — Syne 600 · Card titles, feature names</div>
+    <div class="t-subhead">Penetration Testing & VAPT</div>
+  </div>
+
+  <div class="type-sample">
+    <div class="type-label">Body — DM Sans 400 · Paragraphs, descriptions</div>
+    <div class="t-body">CertSigma delivers rigorous, expert-led security audits and compliance certifications — helping you close enterprise deals, satisfy regulators, and build lasting trust with customers worldwide.</div>
+  </div>
+
+  <div class="type-sample">
+    <div class="type-label">Small — DM Sans 500 · Captions, metadata</div>
+    <div class="t-small">ISO 27001 Lead Auditor · CISSP · CISA Certified</div>
+  </div>
+
+  <div class="type-sample">
+    <div class="type-label">Label — DM Sans 700 · Section labels, badges</div>
+    <div class="t-label-text">What we do</div>
+  </div>
+
+  <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.4rem 1.8rem;margin-top:1rem;max-width:680px;">
+    <h4 style="font-size:0.85rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Why Outfit + DM Sans?</h4>
+    <p style="font-size:0.82rem;color:var(--ink-muted);line-height:1.7;">
+      <strong>Outfit</strong> is a modern geometric sans-serif with clean, complete letterforms — every character is fully resolved and confident, including the G, which is often a tell for lower-quality display fonts. Its weight range (400–900) gives us expressive headlines without sacrificing legibility at smaller sizes. <strong>DM Sans</strong> is calm, highly legible, and designed for digital interfaces. The combination creates warmth and authority — professional enough for enterprise, modern enough for SaaS.
+    </p>
+  </div>
+</div>
+
+<!-- VOICE & TONE -->
+<div class="section">
+  <div class="section-head">Voice & Tone</div>
+  <h2 class="section-title">CertSigma speaks with precision</h2>
+  <div class="voice-grid" style="margin-bottom:1.5rem;">
+    <div class="voice-card">
+      <div class="trait">Authoritative</div>
+      <p>We don't hedge. We know compliance. Speak with confidence and specificity — no "we try to" or "we aim to".</p>
+    </div>
+    <div class="voice-card">
+      <div class="trait">Direct</div>
+      <p>Short sentences. Active voice. Tell clients what we do and why it matters — not what compliance is in general.</p>
+    </div>
+    <div class="voice-card">
+      <div class="trait">Precise</div>
+      <p>Use specific numbers, timelines, and outcomes. "3 weeks" beats "fast". "zero findings" beats "successful".</p>
+    </div>
+    <div class="voice-card">
+      <div class="trait">Warm</div>
+      <p>Not cold or corporate. Compliance is stressful — we are the reassuring expert in the room, not a bureaucrat.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TAGLINES -->
+<div class="section">
+  <div class="section-head">Taglines & Headlines</div>
+  <div class="tagline-list">
+    <div class="tagline-item">
+      <span><strong>Security audits that earn trust, not just certificates.</strong></span>
+      <span class="tagline-role">Primary tagline</span>
+    </div>
+    <div class="tagline-item">
+      <span>Certified. Certain. Complete.</span>
+      <span class="tagline-role">Brand expression</span>
+    </div>
+    <div class="tagline-item">
+      <span>Precision-grade compliance for ambitious teams.</span>
+      <span class="tagline-role">Audience-facing</span>
+    </div>
+    <div class="tagline-item">
+      <span>India's rigour. Global standards.</span>
+      <span class="tagline-role">Market positioning</span>
+    </div>
+    <div class="tagline-item">
+      <span>From kickoff to certified — in weeks, not months.</span>
+      <span class="tagline-role">Speed-focused</span>
+    </div>
+    <div class="tagline-item">
+      <span>The Σ in your security stack.</span>
+      <span class="tagline-role">Brand play on Sigma</span>
+    </div>
+  </div>
+</div>
+
+<!-- DO / DON'T -->
+<div class="section">
+  <div class="section-head">Logo Usage Rules</div>
+  <div class="note-grid">
+    <div class="note-box do">
+      <span class="badge-do">Do</span>
+      <h4>Use the Σ icon at minimum 28px height</h4>
+      <p>Below this size the Sigma letterform loses its distinction and becomes ambiguous.</p>
+    </div>
+    <div class="note-box dont">
+      <span class="badge-dont">Don't</span>
+      <h4>Stretch or distort the logo</h4>
+      <p>The lockup uses a fixed ratio. Do not change aspect ratio, skew, or rotate the wordmark.</p>
+    </div>
+    <div class="note-box do">
+      <span class="badge-do">Do</span>
+      <h4>Maintain clear space equal to the badge height on all sides</h4>
+      <p>The logo needs breathing room. Never crowd it with other elements or edges.</p>
+    </div>
+    <div class="note-box dont">
+      <span class="badge-dont">Don't</span>
+      <h4>Place the primary logo on coloured backgrounds without switching to the reversed version</h4>
+      <p>Use the white/reversed version on any background darker than 50% lightness.</p>
+    </div>
+    <div class="note-box do">
+      <span class="badge-do">Do</span>
+      <h4>Use the standalone Σ icon for app icons, favicons, and small contexts</h4>
+      <p>The icon mark is designed to work in square containers at any size from 16px up.</p>
+    </div>
+    <div class="note-box dont">
+      <span class="badge-dont">Don't</span>
+      <h4>Recreate the logo using a generic Sigma character</h4>
+      <p>The Sigma badge uses a specific weight, size, and border-radius combination. Always use the provided asset.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TARGET AUDIENCE -->
+<div class="section">
+  <div class="section-head">Target Audience</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+    <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.5rem;">
+      <div style="font-size:1.5rem;margin-bottom:0.8rem;">🚀</div>
+      <h4 style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;color:var(--ink);margin-bottom:0.4rem;">B2B SaaS startups</h4>
+      <p style="font-size:0.8rem;color:var(--ink-muted);line-height:1.6;">Seed to Series B companies needing SOC 2 or ISO 27001 to unblock enterprise deals. Often first-time compliance buyers.</p>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.5rem;">
+      <div style="font-size:1.5rem;margin-bottom:0.8rem;">💳</div>
+      <h4 style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;color:var(--ink);margin-bottom:0.4rem;">Fintech & payments</h4>
+      <p style="font-size:0.8rem;color:var(--ink-muted);line-height:1.6;">Companies handling payment data requiring PCI DSS, RBI compliance, or ISO 27001 for banking partnerships.</p>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.5rem;">
+      <div style="font-size:1.5rem;margin-bottom:0.8rem;">🏥</div>
+      <h4 style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;color:var(--ink);margin-bottom:0.4rem;">HealthTech</h4>
+      <p style="font-size:0.8rem;color:var(--ink-muted);line-height:1.6;">Digital health platforms processing patient data that need HIPAA or ISO 27001 to sell into US or EU markets.</p>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.5rem;">
+      <div style="font-size:1.5rem;margin-bottom:0.8rem;">🌍</div>
+      <h4 style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;color:var(--ink);margin-bottom:0.4rem;">Indian firms going global</h4>
+      <p style="font-size:0.8rem;color:var(--ink-muted);line-height:1.6;">Bengaluru / Hyderabad / Pune tech companies needing international certifications to access US, UK, or EU clients.</p>
+    </div>
+  </div>
+</div>
+
+<div style="border-top:1px solid var(--border);padding-top:1.5rem;margin-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+  <span style="font-size:0.75rem;color:var(--ink-muted);">© 2026 CertSigma. Internal Brand Guidelines — Version 1.0</span>
+  <span style="font-family:var(--font-display);font-weight:800;font-size:1rem;color:var(--accent);letter-spacing:-0.03em;">Σ CertSigma</span>
+</div>
+
+</body>
+</html>
