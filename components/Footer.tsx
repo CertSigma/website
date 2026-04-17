@@ -34,11 +34,11 @@ export default function Footer() {
         <div>
           <div className="footer-brand">
             <Image
-              src="/certsigma_logo.png"
+              src="/logos/certsigma-white-text-logo.png"
               alt="CertSigma Logo"
               width={130}
               height={38}
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "contain", height: "auto" }}
             />
           </div>
           <p className="footer-desc">

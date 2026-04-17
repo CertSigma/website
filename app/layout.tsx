@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     "penetration testing",
     "India",
   ],
+  icons: {
+    icon: "/logos/certsigma-favicon.png",
+    apple: "/logos/certsigma-favicon.png",
+  },
 };
 
 export default function RootLayout({

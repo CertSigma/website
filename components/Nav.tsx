@@ -17,7 +17,7 @@ export default function Nav() {
             alt="CertSigma Logo"
             width={140}
             height={40}
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "contain", height: "auto" }}
             priority
           />
         </a>
