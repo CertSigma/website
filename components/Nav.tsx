@@ -13,7 +13,7 @@ export default function Nav() {
       <nav className="site-nav">
         <a href="#" className="nav-logo" onClick={close}>
           <Image
-            src="/logos/certsigma_logo4.png"
+            src="/logos/certsigma_logo1.png"
             alt="CertSigma Logo"
             width={140}
             height={40}
