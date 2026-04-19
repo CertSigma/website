@@ -8,6 +8,7 @@ import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
 import Process from "@/components/Process";
 import Frameworks from "@/components/Frameworks";
+import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import SEOContent from "@/components/SEOContent";
@@ -27,6 +28,7 @@ export default function Home() {
       <WhyUs />
       <Process />
       <Frameworks />
+      <Team />
       <Testimonials />
       <FAQ />
       <SEOContent />
