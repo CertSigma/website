@@ -1,19 +1,16 @@
-const frameworks = [
-  "SOC 2", "ISO 27001", "HIPAA", "PCI DSS", "GDPR",
-  "ISO 42001", "VAPT", "DPDP Act", "HITRUST", "NIST CSF",
-];
-
 export default function FrameworkStrip() {
   return (
-    <div className="framework-strip">
-      {frameworks.map((fw, i) => (
-        <span key={fw}>
-          {fw}
-          {i < frameworks.length - 1 && (
-            <span className="sep" style={{ marginLeft: "2rem" }}>·</span>
-          )}
-        </span>
-      ))}
+    <div className="framework-strip" role="complementary" aria-label="Supported compliance frameworks">
+      <span>SOC 2</span><span className="sep">·</span>
+      <span>ISO 27001</span><span className="sep">·</span>
+      <span>HIPAA</span><span className="sep">·</span>
+      <span>GDPR</span><span className="sep">·</span>
+      <span>DPDP Act</span><span className="sep">·</span>
+      <span>PCI DSS</span><span className="sep">·</span>
+      <span>ISO 27701</span><span className="sep">·</span>
+      <span>ISO 42001</span><span className="sep">·</span>
+      <span>NIST CSF</span><span className="sep">·</span>
+      <span>CIS 18</span>
     </div>
   );
 }
