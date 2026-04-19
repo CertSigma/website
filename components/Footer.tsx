@@ -1,11 +1,19 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer role="contentinfo">
       <div className="footer-top">
         <div>
-          <div className="footer-brand">
-            <span className="footer-sigma" aria-hidden="true">Σ</span>
-            CertSigma
+          <div className="footer-brand" style={{ marginBottom: "1rem" }}>
+            <Image
+              src="/logos/certsigma_logo1.png"
+              alt="CertSigma Logo"
+              width={140}
+              height={40}
+              style={{ width: "140px", height: "auto", display: "block" }}
+              className="footer-logo-img"
+            />
           </div>
           <p className="footer-desc">India&apos;s expert vCISO and security compliance firm. We implement your controls and get you certified — SOC 2, ISO 27001, HIPAA, GDPR, and beyond.</p>
         </div>

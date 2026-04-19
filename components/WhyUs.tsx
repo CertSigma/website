@@ -5,8 +5,8 @@ export default function WhyUs() {
         <div className="why-visual" aria-hidden="true">
           <div className="stat-row">
             <div className="stat-box">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">Certifications delivered</div>
+              <div className="stat-number">250+</div>
+              <div className="stat-label">Implementations</div>
             </div>
             <div className="stat-box">
               <div className="stat-number">100%</div>
@@ -17,8 +17,8 @@ export default function WhyUs() {
               <div className="stat-label">Frameworks covered</div>
             </div>
             <div className="stat-box">
-              <div className="stat-number">3wk</div>
-              <div className="stat-label">Avg. gap assessment delivery</div>
+              <div className="stat-number">6wk</div>
+              <div className="stat-label">Avg. certification period</div>
             </div>
           </div>
         </div>

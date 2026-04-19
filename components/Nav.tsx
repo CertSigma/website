@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -10,9 +11,15 @@ export default function Nav() {
   return (
     <>
       <nav aria-label="Main navigation">
-        <a href="/" className="nav-logo" aria-label="CertSigma Home" onClick={close}>
-          <span className="sigma" aria-hidden="true">Σ</span>
-          CertSigma
+        <a href="/" className="nav-logo" onClick={close}>
+          <Image
+            src="/logos/certsigma_logo1.png"
+            alt="CertSigma Logo"
+            width={140}
+            height={40}
+            style={{ width: "140px", height: "auto", display: "block" }}
+            priority
+          />
         </a>
         <ul className="nav-links">
           <li><a href="#who-needs-this">Who We Help</a></li>
